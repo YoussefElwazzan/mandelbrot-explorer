@@ -14,7 +14,7 @@ function Profile() {
   // Redirect if not logged in
   useEffect(() => {
     if (!token) navigate("/login");
-  }, [token]);
+  }, [token, navigate]);
 
   useEffect(() => {
     if (!token) return;
@@ -33,7 +33,7 @@ function Profile() {
       }
     }
     fetchMySnapshots();
-  }, [token]);
+  }, [token, navigate]);
 
   async function handleDelete(id) {
     if (!window.confirm("Delete this snapshot?")) return;
